@@ -1,9 +1,16 @@
+import 'package:booklyapp3/core/Themes/Themes.dart';
 import 'package:booklyapp3/core/utils/assets/assets.dart';
+import 'package:booklyapp3/features/presentation/views/splash_view/widgets/slidingText.dart';
 import 'package:flutter/material.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,16 +19,10 @@ class SplashViewBody extends StatelessWidget {
       children: [
         const Row(),
         Image.asset(AssetsData.logo),
-       const SizedBox(height: 20,),
-        const Text(
-          'Welcome \n Mahmoud Abdelshafey',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-
-          ),
-          textAlign: TextAlign.center,
-        )
+        const SizedBox(
+          height: 20,
+        ),
+        const SlidingText()
       ],
     );
   }
